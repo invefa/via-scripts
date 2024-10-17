@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         优化知乎体验
 // @namespace    invefa.me
-// @version      1.2.7.3
+// @version      1.2.7.4
 // @description  为手机用户优化知乎体验,个人使用的via浏览器完全支持该脚本
 // @author       invefa
 // @run-at       document-end
@@ -36,6 +36,7 @@
             ".css-1gapyfo",
             ".css-1yun6kn",
             ".css-wfkf2m",
+            ".VoteButton",
             ".MBannerAd",
             ".Post-Sub",
         ];
