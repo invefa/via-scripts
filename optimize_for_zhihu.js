@@ -7,6 +7,7 @@
 // @run-at       document-end
 // @match        http*://*.zhihu.com/*
 // @grant        none
+// @updateURL    https://raw.githubusercontent.com/invefa/via-scripts/refs/heads/master/optimize_for_zhihu.js
 // ==/UserScript==
 
 
