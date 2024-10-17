@@ -14,10 +14,14 @@
 (function () {
     'use strict';
 
+    const isPhone = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
     const enableHideUnnecessaryElements = true;
     const enableRemoveRedirectFromLinks = true;
     const enableClickCancelButton = false;
     const enableRestoreOverflow = true;
+
+    if (!isPhone) return;
 
     function hideUnnecessaryElements() {
         const selectors = [
