@@ -21,19 +21,17 @@
 
     function hideUnnecessaryElements() {
         const selectors = [
+            ".KfeCollection-VipRecommendCard",
             ".MobileModal-wrapper",
-            ".css-1gapyfo",
-            ".css-wfkf2m",
-            ".OpenInAppButton",
-            ".KfeCollection-VipRecommendCard",
-            ".oia-action-bar",
-            ".css-1yun6kn",
-            ".Post-Sub",
-            ".MBannerAd",
-            ".KfeCollection-VipRecommendCard",
             ".AdBelowMoreAnswers",
+            ".OpenInAppButton",
+            ".oia-action-bar",
             ".HotQuestions",
+            ".css-1gapyfo",
             ".css-1yun6kn",
+            ".css-wfkf2m",
+            ".MBannerAd",
+            ".Post-Sub",
         ];
 
         selectors.forEach(selector => {
