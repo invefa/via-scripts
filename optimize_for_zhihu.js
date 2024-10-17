@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         优化知乎体验
 // @namespace    invefa.me
-// @version      1.2.7
+// @version      1.2.7.3
 // @description  为手机用户优化知乎体验,个人使用的via浏览器完全支持该脚本
 // @author       invefa
 // @run-at       document-end
@@ -14,7 +14,9 @@
 (function () {
     'use strict';
 
-    const isPhone = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    const isPhone =
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i
+            .test(navigator.userAgent);
 
     const enableHideUnnecessaryElements = true;
     const enableRemoveRedirectFromLinks = true;
