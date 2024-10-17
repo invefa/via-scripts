@@ -83,5 +83,4 @@
         subtree: true
     });
 
-    // setInterval(clickCancelButton, 500);
 })();
