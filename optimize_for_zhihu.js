@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         优化知乎体验
 // @namespace    invefa.me
-// @version      1.2.8.0
+// @version      1.2.8.1
 // @description  为手机用户优化知乎体验,个人使用的via浏览器完全支持该脚本
 // @author       invefa
 // @run-at       document-end
@@ -33,10 +33,12 @@
         const hideVoteButtons = true;
         const hideUpperBanner = true;
         const hideUpDownGap = true;
+        const hideLowerBar = true;
         const hideNoisyBox = true;
         const hidePostSub = true;
-        const hideDownBar = true;
         const hideAds = true;
+
+        const decreaseHeightOfLowerBar = true;
 
         const selectors = [];
 
@@ -58,7 +60,7 @@
             // selectors.push(".css-apzej4");
         }
 
-        if (hideDownBar) {
+        if (hideLowerBar) {
             selectors.push(".css-24smt2");
             selectors.push(".oia-action-bar");
         }
@@ -68,6 +70,12 @@
             selectors.push(".MHotFeedAd");
             selectors.push(".MBannerAd");
             selectors.push(".AdvertImg");
+        }
+
+        if (decreaseHeightOfLowerBar) {
+            const lowerBarClass = ".ContentItem-actions.is-fixed.is-bottom";
+            const lowerBar = document.querySelector(lowerBarClass);
+            if (lowerBar) lowerBar.style.height = '0px';
         }
 
         selectors.forEach(selector => {
