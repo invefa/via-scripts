@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         优化知乎体验
 // @namespace    invefa.me
-// @version      1.2.7.8
+// @version      1.2.8.0
 // @description  为手机用户优化知乎体验,个人使用的via浏览器完全支持该脚本
 // @author       invefa
 // @run-at       document-end
@@ -27,43 +27,43 @@
 
     function hideUnnecessaryElements() {
 
-        const disableVipRecommendCard = true;
-        const disableOpenInAppButton = true;
-        const disableHotQuestions = true;
-        const disableVoteButtons = true;
-        const disableUpperBanner = true;
-        const disableUpDownGap = true;
-        const disableNoisyBox = true;
-        const disablePostSub = true;
-        const disableDownBar = true;
-        const disableAds = true;
+        const hideVipRecommendCard = true;
+        const hideOpenInAppButton = true;
+        const hideHotQuestions = true;
+        const hideVoteButtons = true;
+        const hideUpperBanner = true;
+        const hideUpDownGap = true;
+        const hideNoisyBox = true;
+        const hidePostSub = true;
+        const hideDownBar = true;
+        const hideAds = true;
 
         const selectors = [];
 
-        if (disableVipRecommendCard) selectors.push(".KfeCollection-VipRecommendCard");
-        if (disableOpenInAppButton) selectors.push(".OpenInAppButton");
-        if (disableHotQuestions) selectors.push(".Card.HotQuestions");
-        if (disableUpperBanner) selectors.push(".css-wfkf2m");
-        if (disableNoisyBox) selectors.push(".MobileModal-wrapper");
-        if (disablePostSub) selectors.push(".Post-Sub");
+        if (hideVipRecommendCard) selectors.push(".KfeCollection-VipRecommendCard");
+        if (hideOpenInAppButton) selectors.push(".OpenInAppButton");
+        if (hideHotQuestions) selectors.push(".Card.HotQuestions");
+        if (hideUpperBanner) selectors.push(".css-wfkf2m");
+        if (hideNoisyBox) selectors.push(".MobileModal-wrapper");
+        if (hidePostSub) selectors.push(".Post-Sub");
 
-        if (disableVoteButtons) {
+        if (hideVoteButtons) {
             selectors.push(".VoteButton--down");
             selectors.push(".VoteButton--up");
         }
 
-        if (disableUpDownGap) {
+        if (hideUpDownGap) {
             selectors.push(".css-1gapyfo");
             selectors.push(".css-1yun6kn");
             // selectors.push(".css-apzej4");
         }
 
-        if (disableDownBar) {
+        if (hideDownBar) {
             selectors.push(".css-24smt2");
             selectors.push(".oia-action-bar");
         }
 
-        if (disableAds) {
+        if (hideAds) {
             selectors.push(".AdBelowMoreAnswers");
             selectors.push(".MHotFeedAd");
             selectors.push(".MBannerAd");
@@ -72,7 +72,6 @@
 
         selectors.forEach(selector => {
             const elements = document.querySelectorAll(selector);
-            if (elements.length === 0) return;
             elements.forEach(element => {
                 if (element) element.style.display = 'none';
             });
