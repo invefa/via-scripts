@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         优化知乎体验
 // @namespace    invefa.me
-// @version      1.2.8.1
+// @version      1.2.8.3
 // @description  为手机用户优化知乎体验,个人使用的via浏览器完全支持该脚本
 // @author       invefa
 // @run-at       document-end
@@ -27,6 +27,8 @@
 
     function hideUnnecessaryElements() {
 
+        const decreaseHeightOfLowerBar = true;
+
         const hideVipRecommendCard = true;
         const hideOpenInAppButton = true;
         const hideHotQuestions = true;
@@ -38,7 +40,12 @@
         const hidePostSub = true;
         const hideAds = true;
 
-        const decreaseHeightOfLowerBar = true;
+
+        if (decreaseHeightOfLowerBar) {
+            const lowerBarClass = ".ContentItem-actions.is-fixed.is-bottom";
+            const lowerBar = document.querySelector(lowerBarClass);
+            if (lowerBar) lowerBar.style.height = '0px';
+        }
 
         const selectors = [];
 
@@ -70,12 +77,6 @@
             selectors.push(".MHotFeedAd");
             selectors.push(".MBannerAd");
             selectors.push(".AdvertImg");
-        }
-
-        if (decreaseHeightOfLowerBar) {
-            const lowerBarClass = ".ContentItem-actions.is-fixed.is-bottom";
-            const lowerBar = document.querySelector(lowerBarClass);
-            if (lowerBar) lowerBar.style.height = '0px';
         }
 
         selectors.forEach(selector => {
