@@ -51,7 +51,7 @@
             selectors.push(".VoteButton--down");
             selectors.push(".VoteButton--up");
         }
-        
+
         if (disableUpDownGap) {
             selectors.push(".css-1gapyfo");
             selectors.push(".css-1yun6kn");
