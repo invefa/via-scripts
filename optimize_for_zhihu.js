@@ -26,25 +26,56 @@
     if (!isPhone) return;
 
     function hideUnnecessaryElements() {
-        const selectors = [
-            ".KfeCollection-VipRecommendCard",
-            ".MobileModal-wrapper",
-            ".AdBelowMoreAnswers",
-            ".VoteButton--down",
-            ".OpenInAppButton",
-            ".oia-action-bar",
-            ".VoteButton--up",
-            ".HotQuestions",
-            ".css-1gapyfo",
-            ".css-1yun6kn",
-            ".css-wfkf2m",
-            ".MBannerAd",
-            ".Post-Sub",
-        ];
+
+        const disableVipRecommendCard = true;
+        const disableOpenInAppButton = true;
+        const disableHotQuestions = true;
+        const disableVoteButtons = true;
+        const disableUpperBanner = true;
+        const disableUpDownGap = true;
+        const disableNoisyBox = true;
+        const disablePostSub = true;
+        const disableDownBar = true;
+        const disableAds = true;
+
+        const selectors = [];
+
+        if (disableVipRecommendCard) selectors.push(".KfeCollection-VipRecommendCard");
+        if (disableOpenInAppButton) selectors.push(".OpenInAppButton");
+        if (disableHotQuestions) selectors.push(".Card.HotQuestions");
+        if (disableUpperBanner) selectors.push(".css-wfkf2m");
+        if (disableNoisyBox) selectors.push(".MobileModal-wrapper");
+        if (disablePostSub) selectors.push(".Post-Sub");
+
+        if (disableVoteButtons) {
+            selectors.push(".VoteButton--down");
+            selectors.push(".VoteButton--up");
+        }
+        
+        if (disableUpDownGap) {
+            selectors.push(".css-1gapyfo");
+            selectors.push(".css-1yun6kn");
+            // selectors.push(".css-apzej4");
+        }
+
+        if (disableDownBar) {
+            selectors.push(".css-24smt2");
+            selectors.push(".oia-action-bar");
+        }
+
+        if (disableAds) {
+            selectors.push(".AdBelowMoreAnswers");
+            selectors.push(".MHotFeedAd");
+            selectors.push(".MBannerAd");
+            selectors.push(".AdvertImg");
+        }
 
         selectors.forEach(selector => {
-            const element = document.querySelector(selector);
-            if (element) element.style.display = 'none';
+            const elements = document.querySelectorAll(selector);
+            if (elements.length === 0) return;
+            elements.forEach(element => {
+                if (element) element.style.display = 'none';
+            });
         });
     }
 
