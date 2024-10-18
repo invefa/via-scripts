@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         优化知乎体验
 // @namespace    invefa.me
-// @version      1.2.7.6
+// @version      1.2.7.8
 // @description  为手机用户优化知乎体验,个人使用的via浏览器完全支持该脚本
 // @author       invefa
 // @run-at       document-end
